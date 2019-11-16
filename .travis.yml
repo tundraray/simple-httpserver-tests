@@ -1,0 +1,6 @@
+dist: bionic
+install:
+  - apt-get install wrk -y
+script: 
+  - wrk -t16 -c1000 -d15s http://restana.apix.live:3000/user/1
+  - wrk -t16 -c1000 -d15s http://restana.apix.live:3001/user/1
