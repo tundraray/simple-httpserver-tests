@@ -3,6 +3,7 @@ addons:
   apt:
     update: true
 install:
+  - sudo apt-get update
   - sudo apt-get install wrk -y
 script: 
   - wrk -t16 -c1000 -d15s http://restana.apix.live:3000/user/1
