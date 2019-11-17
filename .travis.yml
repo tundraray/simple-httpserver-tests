@@ -10,4 +10,5 @@ install:
   - sudo cp wrk /usr/local/bin
 script: 
   - wrk -t16 -c1000 -d15s http://restana.apix.live:3000/user/1
+  - sleep 15
   - wrk -t16 -c1000 -d15s http://restana.apix.live:3001/user/1
