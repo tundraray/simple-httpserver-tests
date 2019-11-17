@@ -3,8 +3,11 @@ addons:
   apt:
     update: true
 install:
-  - sudo apt-get update
-  - sudo apt-get install wrk -y
+  - sudo apt-get install build-essential libssl-dev git -y
+  - git clone https://github.com/wg/wrk.git wrk
+  - cd wrk
+  - make
+  - sudo cp wrk /usr/local/bin
 script: 
   - wrk -t16 -c1000 -d15s http://restana.apix.live:3000/user/1
   - wrk -t16 -c1000 -d15s http://restana.apix.live:3001/user/1
